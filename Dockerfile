@@ -1,9 +1,18 @@
 FROM debian:jessie
 
-ADD https://packages.chef.io/files/stable/chef/12.18.31/debian/8/chef_12.18.31-1_amd64.deb chef_12.18.31-1_amd64.deb
-RUN apt update && \
-  dpkg -i chef_12.18.31-1_amd64.deb
+ENV CHEF_VERSION 12.21.3
+ENV DEBIAN_FRONTEND noninteractive
 
+RUN apt-get update && apt-get install -y \
+      curl \
+    && curl -Lo /chef.deb "https://packages.chef.io/files/stable/chef/${CHEF_VERSION}/debian/8/chef_${CHEF_VERSION}-1_amd64.deb" \
+    && dpkg -i /chef.deb \
+    && rm -f /chef.deb \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN /opt/chef/embedded/bin/gem install \
+      docker-api \
+      public_suffix
 
 ENTRYPOINT ["chef-client"]
 CMD ["-h"]

@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-ENV CHEF_VERSION 12.21.3
+ENV CHEF_VERSION 12.21.12
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get install -y \

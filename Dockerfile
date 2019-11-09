@@ -1,6 +1,6 @@
 FROM debian:stretch
 
-ENV CHEF_VERSION 12.22.5
+ENV CHEF_VERSION 13.12.14
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get install -y \

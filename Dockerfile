@@ -1,12 +1,12 @@
-FROM debian:stretch
+FROM debian:buster
 
-ENV CHEF_VERSION 13.12.14
+ENV CHEF_VERSION 14.15.6
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get install -y \
       curl \
       git \
-    && curl -Lo /chef.deb "https://packages.chef.io/files/stable/chef/${CHEF_VERSION}/debian/8/chef_${CHEF_VERSION}-1_amd64.deb" \
+    && curl -Lo /chef.deb "https://packages.chef.io/files/stable/chef/${CHEF_VERSION}/debian/10/chef_${CHEF_VERSION}-1_amd64.deb" \
     && dpkg -i /chef.deb \
     && rm -f /chef.deb \
     && rm -rf /var/lib/apt/lists/*

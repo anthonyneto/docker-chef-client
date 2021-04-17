@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
       git \
       kmod \
       systemd \
+      iproute2 \
     && curl -sLo /chef.deb "https://packages.chef.io/files/stable/chef/${CHEF_VERSION}/debian/10/chef_${CHEF_VERSION}-1_amd64.deb" \
     && dpkg -i /chef.deb \
     && rm -f /chef.deb \

@@ -1,8 +1,8 @@
 FROM debian:bullseye
 
-ENV CHEF_VERSION 15.17.4
-ENV DEBIAN_FRONTEND noninteractive
+ENV CHEF_VERSION 16.13.16
 ENV CHEF_LICENSE accept-silent
+ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get install -y \
       curl \

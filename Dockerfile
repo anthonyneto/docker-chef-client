@@ -1,6 +1,6 @@
 FROM debian:bullseye
 
-ENV CHEF_VERSION 16.13.16
+ENV CHEF_VERSION 17.4.38
 ENV CHEF_LICENSE accept-silent
 ENV DEBIAN_FRONTEND noninteractive
 

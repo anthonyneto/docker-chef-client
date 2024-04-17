@@ -1,6 +1,6 @@
-FROM debian:bullseye
+FROM debian:bookworm
 
-ENV CHEF_VERSION 17.4.38
+ENV CHEF_VERSION 18.4.12
 ENV CHEF_LICENSE accept-silent
 ENV DEBIAN_FRONTEND noninteractive
 

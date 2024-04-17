@@ -1,4 +1,4 @@
-FROM debian:bookworm
+FROM debian:bullseye
 
 ENV CHEF_VERSION 18.4.12
 ENV CHEF_LICENSE accept-silent

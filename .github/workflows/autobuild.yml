@@ -10,7 +10,7 @@ on:
       - 'v*.*.*'
   pull_request:
     branches:
-      - 'master'
+      - 'main'
 
 jobs:
   autobuild:
@@ -27,11 +27,12 @@ jobs:
             ghcr.io/anthonyneto/chef-client
           tags: |
             type=schedule
+            type=match,pattern=main
             type=ref,event=branch
             type=ref,event=pr
             type=sha
           flavor: |
-            latest=${{ startsWith(github.ref, 'refs/heads/master') }}
+            latest=${{ startsWith(github.ref, 'refs/heads/main') }}
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx
